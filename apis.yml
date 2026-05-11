@@ -1,0 +1,59 @@
+aid: hive
+name: Hive
+description: >-
+  Hive (hive.com) is a project management and team collaboration platform
+  that centralizes projects, tasks, time tracking, messaging, and workflow
+  automation across teams, with multiple project views including Kanban,
+  Gantt, Timeline, and Calendar. The Hive Public API gives developers
+  programmatic access to workspaces, projects, actions (tasks), users,
+  comments, and other core resources, authenticated via API tokens scoped
+  to a workspace.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Project Management
+  - Task Management
+  - Team Collaboration
+  - Productivity
+  - Workflow Automation
+  - Time Tracking
+url: https://raw.githubusercontent.com/api-evangelist/hive/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: hive:public-api
+    name: Hive Public API
+    description: >-
+      REST API for the Hive work management platform, providing CRUD access
+      to workspaces, projects, actions (tasks), users, comments, labels,
+      and attachments. Authentication uses workspace-scoped API tokens.
+    humanURL: https://developers.hive.com/reference/introduction
+    baseURL: https://app.hive.com/api/v1
+    tags:
+      - Workspaces
+      - Projects
+      - Actions
+      - Tasks
+      - Users
+    properties:
+      - type: Documentation
+        url: https://developers.hive.com/reference/introduction
+      - type: API Reference
+        url: https://developers.hive.com/reference
+common:
+  - type: Website
+    url: https://hive.com/
+  - type: Documentation
+    url: https://developers.hive.com/
+  - type: API Reference
+    url: https://developers.hive.com/reference/introduction
+  - type: Sign Up
+    url: https://hive.com/get-started/
+  - type: Pricing
+    url: https://hive.com/pricing/
+  - type: Support
+    url: https://support.hive.com/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
