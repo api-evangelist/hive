@@ -39,16 +39,16 @@ apis:
     properties:
       - type: Documentation
         url: https://developers.hive.com/reference/introduction
-      - type: API Reference
+      - type: APIReference
         url: https://developers.hive.com/reference
 common:
   - type: Website
     url: https://hive.com/
   - type: Documentation
     url: https://developers.hive.com/
-  - type: API Reference
+  - type: APIReference
     url: https://developers.hive.com/reference/introduction
-  - type: Sign Up
+  - type: SignUp
     url: https://hive.com/get-started/
   - type: Pricing
     url: https://hive.com/pricing/
