@@ -42,6 +42,8 @@ apis:
       - type: APIReference
         url: https://developers.hive.com/reference
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/hiveai
   - type: Website
     url: https://hive.com/
   - type: Documentation
