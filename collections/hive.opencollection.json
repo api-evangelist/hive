@@ -1,0 +1,1291 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hive Public API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List workspaces accessible to the authenticated user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces"
+      },
+      "docs": "List workspaces accessible to the authenticated user"
+    },
+    {
+      "info": {
+        "name": "List actions in a workspace",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/actions",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List actions in a workspace"
+    },
+    {
+      "info": {
+        "name": "Search actions in a workspace",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/actions/search",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Search actions in a workspace"
+    },
+    {
+      "info": {
+        "name": "Create an action (task)",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/actions"
+      },
+      "docs": "Create an action (task)"
+    },
+    {
+      "info": {
+        "name": "Get an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/actions/:actionId",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get an action"
+    },
+    {
+      "info": {
+        "name": "Update an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/actions/:actionId",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update an action"
+    },
+    {
+      "info": {
+        "name": "Delete an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/actions/:actionId",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete an action"
+    },
+    {
+      "info": {
+        "name": "List attachments for an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/attachments",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List attachments for an action"
+    },
+    {
+      "info": {
+        "name": "Add an attachment to an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/attachments",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Add an attachment to an action"
+    },
+    {
+      "info": {
+        "name": "Get an action attachment",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/attachments/:attachmentId",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "attachmentId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get an action attachment"
+    },
+    {
+      "info": {
+        "name": "List comments on an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/comments",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List comments on an action"
+    },
+    {
+      "info": {
+        "name": "Add a comment to an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/comments",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Add a comment to an action"
+    },
+    {
+      "info": {
+        "name": "Get the action history",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/action_history",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get the action history"
+    },
+    {
+      "info": {
+        "name": "List subactions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/subactions",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List subactions"
+    },
+    {
+      "info": {
+        "name": "Apply a template to an action",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/actions/:actionId/apply_template",
+        "params": [
+          {
+            "name": "actionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Apply a template to an action"
+    },
+    {
+      "info": {
+        "name": "Bulk update actions",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/actions/bulk-update"
+      },
+      "docs": "Bulk update actions"
+    },
+    {
+      "info": {
+        "name": "List projects",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/projects"
+      },
+      "docs": "List projects"
+    },
+    {
+      "info": {
+        "name": "Create a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/projects"
+      },
+      "docs": "Create a project"
+    },
+    {
+      "info": {
+        "name": "Get a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/projects/:projectId",
+        "params": [
+          {
+            "name": "projectId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a project"
+    },
+    {
+      "info": {
+        "name": "Update a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/projects/:projectId",
+        "params": [
+          {
+            "name": "projectId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a project"
+    },
+    {
+      "info": {
+        "name": "Delete a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/projects/:projectId",
+        "params": [
+          {
+            "name": "projectId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a project"
+    },
+    {
+      "info": {
+        "name": "List projects in a workspace",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/projects",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List projects in a workspace"
+    },
+    {
+      "info": {
+        "name": "Copy a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/projects/copy"
+      },
+      "docs": "Copy a project"
+    },
+    {
+      "info": {
+        "name": "List project users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/projects/:projectId/users",
+        "params": [
+          {
+            "name": "projectId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List project users"
+    },
+    {
+      "info": {
+        "name": "Create a project custom field",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/projects/:projectId/project_custom_field",
+        "params": [
+          {
+            "name": "projectId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Create a project custom field"
+    },
+    {
+      "info": {
+        "name": "Update a project custom field",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/projects/:projectId/project_custom_field/:fieldId",
+        "params": [
+          {
+            "name": "projectId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "fieldId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a project custom field"
+    },
+    {
+      "info": {
+        "name": "Delete a project custom field",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/projects/:projectId/project_custom_field/:fieldId",
+        "params": [
+          {
+            "name": "projectId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "fieldId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a project custom field"
+    },
+    {
+      "info": {
+        "name": "List agile sprints in a workspace",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/agile_sprints",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List agile sprints in a workspace"
+    },
+    {
+      "info": {
+        "name": "Get a sprint",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/agile_sprints/:sprintId",
+        "params": [
+          {
+            "name": "sprintId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a sprint"
+    },
+    {
+      "info": {
+        "name": "List custom fields",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/custom_fields",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List custom fields"
+    },
+    {
+      "info": {
+        "name": "Create a custom field",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/custom_fields",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Create a custom field"
+    },
+    {
+      "info": {
+        "name": "Get a custom field",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/custom_fields/:customFieldId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "customFieldId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a custom field"
+    },
+    {
+      "info": {
+        "name": "List labels",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/labels",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List labels"
+    },
+    {
+      "info": {
+        "name": "Create a label",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/labels",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Create a label"
+    },
+    {
+      "info": {
+        "name": "Get a label",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/labels/:labelId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "labelId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a label"
+    },
+    {
+      "info": {
+        "name": "Update a label",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/labels/:labelId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "labelId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a label"
+    },
+    {
+      "info": {
+        "name": "Delete a label",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/labels/:labelId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "labelId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a label"
+    },
+    {
+      "info": {
+        "name": "Send a chat message",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/messages"
+      },
+      "docs": "Send a chat message"
+    },
+    {
+      "info": {
+        "name": "Create a webhook",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/webhooks"
+      },
+      "docs": "Create a webhook"
+    },
+    {
+      "info": {
+        "name": "Delete a webhook",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/webhooks/:webhookId",
+        "params": [
+          {
+            "name": "webhookId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a webhook"
+    },
+    {
+      "info": {
+        "name": "List workflows",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/workflows",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List workflows"
+    },
+    {
+      "info": {
+        "name": "Trigger a workflow",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/workflows/trigger"
+      },
+      "docs": "Trigger a workflow"
+    },
+    {
+      "info": {
+        "name": "List groups",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/groups",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List groups"
+    },
+    {
+      "info": {
+        "name": "Create a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/groups",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Create a group"
+    },
+    {
+      "info": {
+        "name": "Get a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/groups/:groupId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "groupId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a group"
+    },
+    {
+      "info": {
+        "name": "Update a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/groups/:groupId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "groupId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a group"
+    },
+    {
+      "info": {
+        "name": "Patch a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/groups/:groupId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "groupId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Patch a group"
+    },
+    {
+      "info": {
+        "name": "Delete a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/groups/:groupId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "groupId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a group"
+    },
+    {
+      "info": {
+        "name": "List users in a workspace",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/users",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List users in a workspace"
+    },
+    {
+      "info": {
+        "name": "Add a user to a workspace",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/users",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Add a user to a workspace"
+    },
+    {
+      "info": {
+        "name": "Remove a user from a workspace",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/users",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Remove a user from a workspace"
+    },
+    {
+      "info": {
+        "name": "Get a workspace user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/users/:userId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a workspace user"
+    },
+    {
+      "info": {
+        "name": "Update a workspace user",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/users/:userId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a workspace user"
+    },
+    {
+      "info": {
+        "name": "Patch a workspace user",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/users/:userId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Patch a workspace user"
+    },
+    {
+      "info": {
+        "name": "Delete a workspace user",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/users/:userId",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a workspace user"
+    },
+    {
+      "info": {
+        "name": "Get a user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/users/:userId",
+        "params": [
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a user"
+    },
+    {
+      "info": {
+        "name": "Update a user",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/users/:userId",
+        "params": [
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a user"
+    },
+    {
+      "info": {
+        "name": "List users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/users"
+      },
+      "docs": "List users"
+    },
+    {
+      "info": {
+        "name": "List teams",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/workspaces/:workspaceId/teams",
+        "params": [
+          {
+            "name": "workspaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List teams"
+    },
+    {
+      "info": {
+        "name": "Create a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/teams"
+      },
+      "docs": "Create a team"
+    },
+    {
+      "info": {
+        "name": "Update a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/teams/:teamId",
+        "params": [
+          {
+            "name": "teamId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a team"
+    },
+    {
+      "info": {
+        "name": "Delete a team",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/teams/:teamId",
+        "params": [
+          {
+            "name": "teamId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a team"
+    },
+    {
+      "info": {
+        "name": "Add a team member",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/teams/:teamId/members",
+        "params": [
+          {
+            "name": "teamId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Add a team member"
+    },
+    {
+      "info": {
+        "name": "Remove a team member",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/teams/:teamId/members",
+        "params": [
+          {
+            "name": "teamId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Remove a team member"
+    },
+    {
+      "info": {
+        "name": "List resource assignments",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/resource_assignments"
+      },
+      "docs": "List resource assignments"
+    },
+    {
+      "info": {
+        "name": "Create a resource assignment",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://app.hive.com/api/v1/resource_assignments"
+      },
+      "docs": "Create a resource assignment"
+    },
+    {
+      "info": {
+        "name": "Get a resource assignment",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/resource_assignments/:resourceAssignmentId",
+        "params": [
+          {
+            "name": "resourceAssignmentId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a resource assignment"
+    },
+    {
+      "info": {
+        "name": "Update a resource assignment",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://app.hive.com/api/v1/resource_assignments/:resourceAssignmentId",
+        "params": [
+          {
+            "name": "resourceAssignmentId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a resource assignment"
+    },
+    {
+      "info": {
+        "name": "Delete a resource assignment",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://app.hive.com/api/v1/resource_assignments/:resourceAssignmentId",
+        "params": [
+          {
+            "name": "resourceAssignmentId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a resource assignment"
+    },
+    {
+      "info": {
+        "name": "List form submissions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/form-submissions"
+      },
+      "docs": "List form submissions"
+    },
+    {
+      "info": {
+        "name": "Get widget data",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/dashboard_widgets/:widgetId/data",
+        "params": [
+          {
+            "name": "widgetId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get widget data"
+    },
+    {
+      "info": {
+        "name": "Export widget data",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://app.hive.com/api/v1/dashboard_widgets/:widgetId/export",
+        "params": [
+          {
+            "name": "widgetId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Export widget data"
+    }
+  ],
+  "bundled": true
+}
