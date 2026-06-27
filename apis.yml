@@ -50,13 +50,13 @@ common:
     url: https://developers.hive.com/
   - type: APIReference
     url: https://developers.hive.com/reference/introduction
-  - type: SignUp
+  - type: Signup
     url: https://hive.com/get-started/
   - type: Pricing
     url: https://hive.com/pricing/
   - type: Support
     url: https://support.hive.com/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developers.hive.com/llms.txt
 maintainers:
   - FN: Kin Lane
