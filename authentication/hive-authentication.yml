@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/hive-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: api_key
+  description: Workspace-scoped API token issued from Hive admin settings.
+  sources:
+  - openapi/hive-openapi.yml

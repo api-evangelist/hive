@@ -42,6 +42,12 @@ apis:
       - type: APIReference
         url: https://developers.hive.com/reference
 common:
+  - type: DomainSecurity
+    url: security/hive-domain-security.yml
+  - type: Authentication
+    url: authentication/hive-authentication.yml
+  - type: Blog
+    url: https://hive.com/blog/
   - type: LinkedIn
     url: https://www.linkedin.com/company/hiveai
   - type: Website
