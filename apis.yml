@@ -42,6 +42,8 @@ apis:
       - type: APIReference
         url: https://developers.hive.com/reference
 common:
+  - type: AgenticAccess
+    url: agentic-access/hive-agentic-access.yml
   - type: DomainSecurity
     url: security/hive-domain-security.yml
   - type: Authentication
