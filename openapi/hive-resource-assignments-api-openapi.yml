@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Hive Public Actions Resource Assignments API
+  description: 'REST API for the Hive (hive.com) work-management platform. Provides
+
+    CRUD access to workspaces, projects, actions (tasks), users, teams,
+
+    comments, attachments, labels, custom fields, sprints, dashboards,
+
+    webhooks, and workflows. Endpoint list derived from
+
+    https://developers.hive.com/llms.txt.
+
+    '
+  version: '1.0'
+  contact:
+    name: Hive Developers
+    url: https://developers.hive.com/reference/introduction
+servers:
+- url: https://app.hive.com/api/v1
+  description: Hive Public API v1
+security:
+- ApiKeyAuth: []
+tags:
+- name: Resource Assignments
+paths:
+  /resource_assignments:
+    get:
+      summary: List resource assignments
+      operationId: listResourceAssignments
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Resource Assignments
+    post:
+      summary: Create a resource assignment
+      operationId: createResourceAssignment
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Resource Assignments
+  /resource_assignments/{resourceAssignmentId}:
+    parameters:
+    - name: resourceAssignmentId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a resource assignment
+      operationId: getResourceAssignment
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Resource Assignments
+    put:
+      summary: Update a resource assignment
+      operationId: updateResourceAssignment
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Resource Assignments
+    delete:
+      summary: Delete a resource assignment
+      operationId: deleteResourceAssignment
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Resource Assignments
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: api_key
+      description: Workspace-scoped API token issued from Hive admin settings.

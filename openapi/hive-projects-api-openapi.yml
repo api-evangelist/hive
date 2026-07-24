@@ -1,0 +1,139 @@
+openapi: 3.1.0
+info:
+  title: Hive Public Actions Projects API
+  description: 'REST API for the Hive (hive.com) work-management platform. Provides
+
+    CRUD access to workspaces, projects, actions (tasks), users, teams,
+
+    comments, attachments, labels, custom fields, sprints, dashboards,
+
+    webhooks, and workflows. Endpoint list derived from
+
+    https://developers.hive.com/llms.txt.
+
+    '
+  version: '1.0'
+  contact:
+    name: Hive Developers
+    url: https://developers.hive.com/reference/introduction
+servers:
+- url: https://app.hive.com/api/v1
+  description: Hive Public API v1
+security:
+- ApiKeyAuth: []
+tags:
+- name: Projects
+paths:
+  /projects:
+    get:
+      summary: List projects
+      operationId: listProjects
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Projects
+    post:
+      summary: Create a project
+      operationId: createProject
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Projects
+  /projects/{projectId}:
+    parameters:
+    - $ref: '#/components/parameters/ProjectId'
+    get:
+      summary: Get a project
+      operationId: getProject
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Projects
+    put:
+      summary: Update a project
+      operationId: updateProject
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Projects
+    delete:
+      summary: Delete a project
+      operationId: deleteProject
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Projects
+  /projects/copy:
+    post:
+      summary: Copy a project
+      operationId: copyProject
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Projects
+  /projects/{projectId}/users:
+    parameters:
+    - $ref: '#/components/parameters/ProjectId'
+    get:
+      summary: List project users
+      operationId: listProjectUsers
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Projects
+  /projects/{projectId}/project_custom_field:
+    parameters:
+    - $ref: '#/components/parameters/ProjectId'
+    post:
+      summary: Create a project custom field
+      operationId: createProjectCustomField
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Projects
+  /projects/{projectId}/project_custom_field/{fieldId}:
+    parameters:
+    - $ref: '#/components/parameters/ProjectId'
+    - name: fieldId
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Update a project custom field
+      operationId: updateProjectCustomField
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Projects
+    delete:
+      summary: Delete a project custom field
+      operationId: deleteProjectCustomField
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Projects
+components:
+  parameters:
+    ProjectId:
+      name: projectId
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: api_key
+      description: Workspace-scoped API token issued from Hive admin settings.

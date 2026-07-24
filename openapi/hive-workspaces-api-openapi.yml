@@ -1,0 +1,329 @@
+openapi: 3.1.0
+info:
+  title: Hive Public Actions Workspaces API
+  description: 'REST API for the Hive (hive.com) work-management platform. Provides
+
+    CRUD access to workspaces, projects, actions (tasks), users, teams,
+
+    comments, attachments, labels, custom fields, sprints, dashboards,
+
+    webhooks, and workflows. Endpoint list derived from
+
+    https://developers.hive.com/llms.txt.
+
+    '
+  version: '1.0'
+  contact:
+    name: Hive Developers
+    url: https://developers.hive.com/reference/introduction
+servers:
+- url: https://app.hive.com/api/v1
+  description: Hive Public API v1
+security:
+- ApiKeyAuth: []
+tags:
+- name: Workspaces
+paths:
+  /workspaces:
+    get:
+      summary: List workspaces accessible to the authenticated user
+      operationId: listWorkspaces
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/actions:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List actions in a workspace
+      operationId: listWorkspaceActions
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/actions/search:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: Search actions in a workspace
+      operationId: searchWorkspaceActions
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/projects:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List projects in a workspace
+      operationId: listWorkspaceProjects
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/agile_sprints:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List agile sprints in a workspace
+      operationId: listSprints
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/custom_fields:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List custom fields
+      operationId: listCustomFields
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    post:
+      summary: Create a custom field
+      operationId: createCustomField
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/custom_fields/{customFieldId}:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    - name: customFieldId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a custom field
+      operationId: getCustomField
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/labels:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List labels
+      operationId: listLabels
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    post:
+      summary: Create a label
+      operationId: createLabel
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/labels/{labelId}:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    - name: labelId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a label
+      operationId: getLabel
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    put:
+      summary: Update a label
+      operationId: updateLabel
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    delete:
+      summary: Delete a label
+      operationId: deleteLabel
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/workflows:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List workflows
+      operationId: listWorkflows
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/groups:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List groups
+      operationId: listGroups
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    post:
+      summary: Create a group
+      operationId: createGroup
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/groups/{groupId}:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    - name: groupId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a group
+      operationId: getGroup
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    patch:
+      summary: Patch a group
+      operationId: patchGroup
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    put:
+      summary: Update a group
+      operationId: updateGroup
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    delete:
+      summary: Delete a group
+      operationId: deleteGroup
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/users:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List users in a workspace
+      operationId: listWorkspaceUsers
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    post:
+      summary: Add a user to a workspace
+      operationId: addWorkspaceUser
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Workspaces
+    delete:
+      summary: Remove a user from a workspace
+      operationId: removeWorkspaceUser
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/users/{userId}:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    - $ref: '#/components/parameters/UserId'
+    get:
+      summary: Get a workspace user
+      operationId: getWorkspaceUser
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    patch:
+      summary: Patch a workspace user
+      operationId: patchWorkspaceUser
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    put:
+      summary: Update a workspace user
+      operationId: updateWorkspaceUser
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+    delete:
+      summary: Delete a workspace user
+      operationId: deleteWorkspaceUser
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Workspaces
+  /workspaces/{workspaceId}/teams:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      summary: List teams
+      operationId: listTeams
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workspaces
+components:
+  parameters:
+    UserId:
+      name: userId
+      in: path
+      required: true
+      schema:
+        type: string
+    WorkspaceId:
+      name: workspaceId
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: api_key
+      description: Workspace-scoped API token issued from Hive admin settings.

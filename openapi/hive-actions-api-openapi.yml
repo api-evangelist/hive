@@ -1,0 +1,172 @@
+openapi: 3.1.0
+info:
+  title: Hive Public Actions API
+  description: 'REST API for the Hive (hive.com) work-management platform. Provides
+
+    CRUD access to workspaces, projects, actions (tasks), users, teams,
+
+    comments, attachments, labels, custom fields, sprints, dashboards,
+
+    webhooks, and workflows. Endpoint list derived from
+
+    https://developers.hive.com/llms.txt.
+
+    '
+  version: '1.0'
+  contact:
+    name: Hive Developers
+    url: https://developers.hive.com/reference/introduction
+servers:
+- url: https://app.hive.com/api/v1
+  description: Hive Public API v1
+security:
+- ApiKeyAuth: []
+tags:
+- name: Actions
+paths:
+  /actions:
+    post:
+      summary: Create an action (task)
+      operationId: createAction
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Actions
+  /actions/{actionId}:
+    parameters:
+    - $ref: '#/components/parameters/ActionId'
+    get:
+      summary: Get an action
+      operationId: getAction
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+    put:
+      summary: Update an action
+      operationId: updateAction
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+    delete:
+      summary: Delete an action
+      operationId: deleteAction
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Actions
+  /actions/{actionId}/attachments:
+    parameters:
+    - $ref: '#/components/parameters/ActionId'
+    get:
+      summary: List attachments for an action
+      operationId: listActionAttachments
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+    post:
+      summary: Add an attachment to an action
+      operationId: addActionAttachment
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Actions
+  /actions/{actionId}/attachments/{attachmentId}:
+    parameters:
+    - $ref: '#/components/parameters/ActionId'
+    - name: attachmentId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get an action attachment
+      operationId: getActionAttachment
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+  /actions/{actionId}/comments:
+    parameters:
+    - $ref: '#/components/parameters/ActionId'
+    get:
+      summary: List comments on an action
+      operationId: listActionComments
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+    post:
+      summary: Add a comment to an action
+      operationId: createActionComment
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Actions
+  /actions/{actionId}/action_history:
+    parameters:
+    - $ref: '#/components/parameters/ActionId'
+    get:
+      summary: Get the action history
+      operationId: getActionHistory
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+  /actions/{actionId}/subactions:
+    parameters:
+    - $ref: '#/components/parameters/ActionId'
+    get:
+      summary: List subactions
+      operationId: listSubactions
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+  /actions/{actionId}/apply_template:
+    parameters:
+    - $ref: '#/components/parameters/ActionId'
+    post:
+      summary: Apply a template to an action
+      operationId: applyTemplateToAction
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+  /actions/bulk-update:
+    post:
+      summary: Bulk update actions
+      operationId: bulkUpdateActions
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Actions
+components:
+  parameters:
+    ActionId:
+      name: actionId
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: api_key
+      description: Workspace-scoped API token issued from Hive admin settings.

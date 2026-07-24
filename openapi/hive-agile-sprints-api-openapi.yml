@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: Hive Public Actions Agile Sprints API
+  description: 'REST API for the Hive (hive.com) work-management platform. Provides
+
+    CRUD access to workspaces, projects, actions (tasks), users, teams,
+
+    comments, attachments, labels, custom fields, sprints, dashboards,
+
+    webhooks, and workflows. Endpoint list derived from
+
+    https://developers.hive.com/llms.txt.
+
+    '
+  version: '1.0'
+  contact:
+    name: Hive Developers
+    url: https://developers.hive.com/reference/introduction
+servers:
+- url: https://app.hive.com/api/v1
+  description: Hive Public API v1
+security:
+- ApiKeyAuth: []
+tags:
+- name: Agile Sprints
+paths:
+  /agile_sprints/{sprintId}:
+    parameters:
+    - name: sprintId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get a sprint
+      operationId: getSprint
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Agile Sprints
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: api_key
+      description: Workspace-scoped API token issued from Hive admin settings.
