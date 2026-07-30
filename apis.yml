@@ -9,7 +9,19 @@ description: >-
   comments, and other core resources, authenticated via API tokens scoped
   to a workspace.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hive.png
 tags:
   - Project Management
   - Task Management
@@ -22,25 +34,144 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: hive:public-api
-    name: Hive Public API
-    description: >-
-      REST API for the Hive work management platform, providing CRUD access
-      to workspaces, projects, actions (tasks), users, comments, labels,
-      and attachments. Authentication uses workspace-scoped API tokens.
-    humanURL: https://developers.hive.com/reference/introduction
-    baseURL: https://app.hive.com/api/v1
-    tags:
-      - Workspaces
-      - Projects
-      - Actions
-      - Tasks
-      - Users
-    properties:
-      - type: Documentation
-        url: https://developers.hive.com/reference/introduction
-      - type: APIReference
-        url: https://developers.hive.com/reference
+- aid: hive:public-api
+  name: Hive Public API
+  description: >-
+    REST API for the Hive work management platform, providing CRUD access to workspaces, projects, actions
+    (tasks), users, comments, labels, and attachments. Authentication uses workspace-scoped API tokens.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Workspaces
+  - Projects
+  - Actions
+  - Tasks
+  - Users
+  properties:
+  - type: Documentation
+    url: https://developers.hive.com/reference/introduction
+  - type: APIReference
+    url: https://developers.hive.com/reference
+- aid: hive:hive-actions-api
+  name: Hive Actions API
+  description: The Actions API from Hive — 9 operation(s) for actions.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-actions-api-openapi.yml
+- aid: hive:hive-agile-sprints-api
+  name: Hive Agile Sprints API
+  description: The Agile Sprints API from Hive — 1 operation(s) for agile sprints.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Agile Sprints
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-agile-sprints-api-openapi.yml
+- aid: hive:hive-dashboard-widgets-api
+  name: Hive Dashboard Widgets API
+  description: The Dashboard Widgets API from Hive — 2 operation(s) for dashboard widgets.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Dashboard Widgets
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-dashboard-widgets-api-openapi.yml
+- aid: hive:hive-form-submissions-api
+  name: Hive Form Submissions API
+  description: The Form Submissions API from Hive — 1 operation(s) for form submissions.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Form Submissions
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-form-submissions-api-openapi.yml
+- aid: hive:hive-messages-api
+  name: Hive Messages API
+  description: The Messages API from Hive — 1 operation(s) for messages.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-messages-api-openapi.yml
+- aid: hive:hive-projects-api
+  name: Hive Projects API
+  description: The Projects API from Hive — 6 operation(s) for projects.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-projects-api-openapi.yml
+- aid: hive:hive-resource-assignments-api
+  name: Hive Resource Assignments API
+  description: The Resource Assignments API from Hive — 2 operation(s) for resource assignments.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Resource Assignments
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-resource-assignments-api-openapi.yml
+- aid: hive:hive-teams-api
+  name: Hive Teams API
+  description: The Teams API from Hive — 3 operation(s) for teams.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-teams-api-openapi.yml
+- aid: hive:hive-users-api
+  name: Hive Users API
+  description: The Users API from Hive — 2 operation(s) for users.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-users-api-openapi.yml
+- aid: hive:hive-webhooks-api
+  name: Hive Webhooks API
+  description: The Webhooks API from Hive — 2 operation(s) for webhooks.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-webhooks-api-openapi.yml
+- aid: hive:hive-workflows-api
+  name: Hive Workflows API
+  description: The Workflows API from Hive — 1 operation(s) for workflows.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-workflows-api-openapi.yml
+- aid: hive:hive-workspaces-api
+  name: Hive Workspaces API
+  description: The Workspaces API from Hive — 15 operation(s) for workspaces.
+  humanURL: https://developers.hive.com/reference/introduction
+  baseURL: https://app.hive.com/api/v1
+  tags:
+  - Workspaces
+  properties:
+  - type: OpenAPI
+    url: openapi/hive-workspaces-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/hive-agentic-access.yml
