@@ -1,0 +1,564 @@
+openapi: 3.1.0
+info:
+  title: Hive Public API
+  description: |
+    REST API for the Hive (hive.com) work-management platform. Provides
+    CRUD access to workspaces, projects, actions (tasks), users, teams,
+    comments, attachments, labels, custom fields, sprints, dashboards,
+    webhooks, and workflows. Endpoint list derived from
+    https://developers.hive.com/llms.txt.
+  version: "1.0"
+  contact:
+    name: Hive Developers
+    url: https://developers.hive.com/reference/introduction
+servers:
+  - url: https://app.hive.com/api/v1
+    description: Hive Public API v1
+security:
+  - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: api_key
+      description: Workspace-scoped API token issued from Hive admin settings.
+  parameters:
+    WorkspaceId:
+      name: workspaceId
+      in: path
+      required: true
+      schema:
+        type: string
+    ActionId:
+      name: actionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ProjectId:
+      name: projectId
+      in: path
+      required: true
+      schema:
+        type: string
+    UserId:
+      name: userId
+      in: path
+      required: true
+      schema:
+        type: string
+paths:
+  /workspaces:
+    get:
+      summary: List workspaces accessible to the authenticated user
+      operationId: listWorkspaces
+      responses:
+        "200": { description: OK }
+  /workspaces/{workspaceId}/actions:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List actions in a workspace
+      operationId: listWorkspaceActions
+      responses:
+        "200": { description: OK }
+  /workspaces/{workspaceId}/actions/search:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: Search actions in a workspace
+      operationId: searchWorkspaceActions
+      responses:
+        "200": { description: OK }
+  /actions:
+    post:
+      summary: Create an action (task)
+      operationId: createAction
+      responses:
+        "201": { description: Created }
+  /actions/{actionId}:
+    parameters:
+      - $ref: "#/components/parameters/ActionId"
+    get:
+      summary: Get an action
+      operationId: getAction
+      responses:
+        "200": { description: OK }
+    put:
+      summary: Update an action
+      operationId: updateAction
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete an action
+      operationId: deleteAction
+      responses:
+        "204": { description: Deleted }
+  /actions/{actionId}/attachments:
+    parameters:
+      - $ref: "#/components/parameters/ActionId"
+    get:
+      summary: List attachments for an action
+      operationId: listActionAttachments
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Add an attachment to an action
+      operationId: addActionAttachment
+      responses:
+        "201": { description: Created }
+  /actions/{actionId}/attachments/{attachmentId}:
+    parameters:
+      - $ref: "#/components/parameters/ActionId"
+      - name: attachmentId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get an action attachment
+      operationId: getActionAttachment
+      responses:
+        "200": { description: OK }
+  /actions/{actionId}/comments:
+    parameters:
+      - $ref: "#/components/parameters/ActionId"
+    get:
+      summary: List comments on an action
+      operationId: listActionComments
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Add a comment to an action
+      operationId: createActionComment
+      responses:
+        "201": { description: Created }
+  /actions/{actionId}/action_history:
+    parameters:
+      - $ref: "#/components/parameters/ActionId"
+    get:
+      summary: Get the action history
+      operationId: getActionHistory
+      responses:
+        "200": { description: OK }
+  /actions/{actionId}/subactions:
+    parameters:
+      - $ref: "#/components/parameters/ActionId"
+    get:
+      summary: List subactions
+      operationId: listSubactions
+      responses:
+        "200": { description: OK }
+  /actions/{actionId}/apply_template:
+    parameters:
+      - $ref: "#/components/parameters/ActionId"
+    post:
+      summary: Apply a template to an action
+      operationId: applyTemplateToAction
+      responses:
+        "200": { description: OK }
+  /actions/bulk-update:
+    post:
+      summary: Bulk update actions
+      operationId: bulkUpdateActions
+      responses:
+        "200": { description: OK }
+  /projects:
+    get:
+      summary: List projects
+      operationId: listProjects
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Create a project
+      operationId: createProject
+      responses:
+        "201": { description: Created }
+  /projects/{projectId}:
+    parameters:
+      - $ref: "#/components/parameters/ProjectId"
+    get:
+      summary: Get a project
+      operationId: getProject
+      responses:
+        "200": { description: OK }
+    put:
+      summary: Update a project
+      operationId: updateProject
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete a project
+      operationId: deleteProject
+      responses:
+        "204": { description: Deleted }
+  /workspaces/{workspaceId}/projects:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List projects in a workspace
+      operationId: listWorkspaceProjects
+      responses:
+        "200": { description: OK }
+  /projects/copy:
+    post:
+      summary: Copy a project
+      operationId: copyProject
+      responses:
+        "201": { description: Created }
+  /projects/{projectId}/users:
+    parameters:
+      - $ref: "#/components/parameters/ProjectId"
+    get:
+      summary: List project users
+      operationId: listProjectUsers
+      responses:
+        "200": { description: OK }
+  /projects/{projectId}/project_custom_field:
+    parameters:
+      - $ref: "#/components/parameters/ProjectId"
+    post:
+      summary: Create a project custom field
+      operationId: createProjectCustomField
+      responses:
+        "201": { description: Created }
+  /projects/{projectId}/project_custom_field/{fieldId}:
+    parameters:
+      - $ref: "#/components/parameters/ProjectId"
+      - name: fieldId
+        in: path
+        required: true
+        schema: { type: string }
+    put:
+      summary: Update a project custom field
+      operationId: updateProjectCustomField
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete a project custom field
+      operationId: deleteProjectCustomField
+      responses:
+        "204": { description: Deleted }
+  /workspaces/{workspaceId}/agile_sprints:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List agile sprints in a workspace
+      operationId: listSprints
+      responses:
+        "200": { description: OK }
+  /agile_sprints/{sprintId}:
+    parameters:
+      - name: sprintId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a sprint
+      operationId: getSprint
+      responses:
+        "200": { description: OK }
+  /workspaces/{workspaceId}/custom_fields:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List custom fields
+      operationId: listCustomFields
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Create a custom field
+      operationId: createCustomField
+      responses:
+        "201": { description: Created }
+  /workspaces/{workspaceId}/custom_fields/{customFieldId}:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+      - name: customFieldId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a custom field
+      operationId: getCustomField
+      responses:
+        "200": { description: OK }
+  /workspaces/{workspaceId}/labels:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List labels
+      operationId: listLabels
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Create a label
+      operationId: createLabel
+      responses:
+        "201": { description: Created }
+  /workspaces/{workspaceId}/labels/{labelId}:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+      - name: labelId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a label
+      operationId: getLabel
+      responses:
+        "200": { description: OK }
+    put:
+      summary: Update a label
+      operationId: updateLabel
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete a label
+      operationId: deleteLabel
+      responses:
+        "204": { description: Deleted }
+  /messages:
+    post:
+      summary: Send a chat message
+      operationId: createMessage
+      responses:
+        "201": { description: Created }
+  /webhooks:
+    post:
+      summary: Create a webhook
+      operationId: createWebhook
+      responses:
+        "201": { description: Created }
+  /webhooks/{webhookId}:
+    parameters:
+      - name: webhookId
+        in: path
+        required: true
+        schema: { type: string }
+    delete:
+      summary: Delete a webhook
+      operationId: deleteWebhook
+      responses:
+        "204": { description: Deleted }
+  /workspaces/{workspaceId}/workflows:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List workflows
+      operationId: listWorkflows
+      responses:
+        "200": { description: OK }
+  /workflows/trigger:
+    post:
+      summary: Trigger a workflow
+      operationId: triggerWorkflow
+      responses:
+        "200": { description: OK }
+  /workspaces/{workspaceId}/groups:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List groups
+      operationId: listGroups
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Create a group
+      operationId: createGroup
+      responses:
+        "201": { description: Created }
+  /workspaces/{workspaceId}/groups/{groupId}:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+      - name: groupId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a group
+      operationId: getGroup
+      responses:
+        "200": { description: OK }
+    patch:
+      summary: Patch a group
+      operationId: patchGroup
+      responses:
+        "200": { description: OK }
+    put:
+      summary: Update a group
+      operationId: updateGroup
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete a group
+      operationId: deleteGroup
+      responses:
+        "204": { description: Deleted }
+  /workspaces/{workspaceId}/users:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List users in a workspace
+      operationId: listWorkspaceUsers
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Add a user to a workspace
+      operationId: addWorkspaceUser
+      responses:
+        "201": { description: Created }
+    delete:
+      summary: Remove a user from a workspace
+      operationId: removeWorkspaceUser
+      responses:
+        "204": { description: Deleted }
+  /workspaces/{workspaceId}/users/{userId}:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+      - $ref: "#/components/parameters/UserId"
+    get:
+      summary: Get a workspace user
+      operationId: getWorkspaceUser
+      responses:
+        "200": { description: OK }
+    patch:
+      summary: Patch a workspace user
+      operationId: patchWorkspaceUser
+      responses:
+        "200": { description: OK }
+    put:
+      summary: Update a workspace user
+      operationId: updateWorkspaceUser
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete a workspace user
+      operationId: deleteWorkspaceUser
+      responses:
+        "204": { description: Deleted }
+  /users/{userId}:
+    parameters:
+      - $ref: "#/components/parameters/UserId"
+    get:
+      summary: Get a user
+      operationId: getUser
+      responses:
+        "200": { description: OK }
+    put:
+      summary: Update a user
+      operationId: updateUser
+      responses:
+        "200": { description: OK }
+  /users:
+    get:
+      summary: List users
+      operationId: listUsers
+      responses:
+        "200": { description: OK }
+  /workspaces/{workspaceId}/teams:
+    parameters:
+      - $ref: "#/components/parameters/WorkspaceId"
+    get:
+      summary: List teams
+      operationId: listTeams
+      responses:
+        "200": { description: OK }
+  /teams:
+    post:
+      summary: Create a team
+      operationId: createTeam
+      responses:
+        "201": { description: Created }
+  /teams/{teamId}:
+    parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema: { type: string }
+    put:
+      summary: Update a team
+      operationId: updateTeam
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete a team
+      operationId: deleteTeam
+      responses:
+        "204": { description: Deleted }
+  /teams/{teamId}/members:
+    parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema: { type: string }
+    post:
+      summary: Add a team member
+      operationId: addTeamMember
+      responses:
+        "201": { description: Created }
+    delete:
+      summary: Remove a team member
+      operationId: removeTeamMember
+      responses:
+        "204": { description: Deleted }
+  /resource_assignments:
+    get:
+      summary: List resource assignments
+      operationId: listResourceAssignments
+      responses:
+        "200": { description: OK }
+    post:
+      summary: Create a resource assignment
+      operationId: createResourceAssignment
+      responses:
+        "201": { description: Created }
+  /resource_assignments/{resourceAssignmentId}:
+    parameters:
+      - name: resourceAssignmentId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a resource assignment
+      operationId: getResourceAssignment
+      responses:
+        "200": { description: OK }
+    put:
+      summary: Update a resource assignment
+      operationId: updateResourceAssignment
+      responses:
+        "200": { description: OK }
+    delete:
+      summary: Delete a resource assignment
+      operationId: deleteResourceAssignment
+      responses:
+        "204": { description: Deleted }
+  /form-submissions:
+    get:
+      summary: List form submissions
+      operationId: listFormSubmissions
+      responses:
+        "200": { description: OK }
+  /dashboard_widgets/{widgetId}/data:
+    parameters:
+      - name: widgetId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get widget data
+      operationId: getWidgetData
+      responses:
+        "200": { description: OK }
+  /dashboard_widgets/{widgetId}/export:
+    parameters:
+      - name: widgetId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Export widget data
+      operationId: exportWidgetData
+      responses:
+        "200": { description: OK }

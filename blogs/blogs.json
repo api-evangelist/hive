@@ -6,16 +6,18 @@
       "feed_url": "https://hive.com/blog/",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "none",
+      "error": "parse_failed"
     },
     {
       "source": "https://developers.hive.com/reference",
       "feed_url": "https://developers.hive.com/reference",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "none",
+      "error": "parse_failed"
     }
   ],
-  "fetched": "2026-07-11T11:50:51Z",
+  "fetched": "2026-08-01T15:38:58Z",
   "post_count": 17
 }

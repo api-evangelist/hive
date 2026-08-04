@@ -1,0 +1,36 @@
+{
+  "provider": "hive",
+  "sources": [
+    "hive-actions-api-openapi.yml",
+    "hive-agile-sprints-api-openapi.yml",
+    "hive-dashboard-widgets-api-openapi.yml",
+    "hive-form-submissions-api-openapi.yml",
+    "hive-messages-api-openapi.yml",
+    "hive-projects-api-openapi.yml",
+    "hive-resource-assignments-api-openapi.yml",
+    "hive-teams-api-openapi.yml",
+    "hive-users-api-openapi.yml",
+    "hive-webhooks-api-openapi.yml",
+    "hive-workflows-api-openapi.yml",
+    "hive-workspaces-api-openapi.yml"
+  ],
+  "outputs": [
+    "hive-actions-api-openapi.yml",
+    "hive-agile-sprints-api-openapi.yml",
+    "hive-dashboard-widgets-api-openapi.yml",
+    "hive-form-submissions-api-openapi.yml",
+    "hive-messages-api-openapi.yml",
+    "hive-projects-api-openapi.yml",
+    "hive-resource-assignments-api-openapi.yml",
+    "hive-teams-api-openapi.yml",
+    "hive-users-api-openapi.yml",
+    "hive-webhooks-api-openapi.yml",
+    "hive-workflows-api-openapi.yml",
+    "hive-workspaces-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
