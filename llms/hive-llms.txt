@@ -1,0 +1,94 @@
+# Hive Documentation
+
+> Add unique value to your team by building custom integrations, features, and 3rd party applications to be used with Hive via the Hive API.
+
+## Guides
+- [Documentation](https://developers.hive.com/docs.md): Hive documentation
+
+## API Reference
+- [Hive GraphQL Documentation](https://developers.hive.com/reference/hive-graphql-documentation.md)
+- [Bulk update actions](https://developers.hive.com/reference/bulk-update-actions.md): Bulk updates up to 1000 actions. Each action object must include _id and may include allowed update fields.
+- [List workspace actions](https://developers.hive.com/reference/get_workspaces_workspaceid_actions.md): Returns cursor-paginated actions accessible to the authenticated user. V2 returns edges/pageInfo; V1 returned arrays and flattened custom field values.
+- [Search actions](https://developers.hive.com/reference/get_workspaces_workspaceid_actions_search.md): Searches workspace actions by title. This endpoint uses limit/skip and returns an array, not cursor pagination.
+- [Create action](https://developers.hive.com/reference/post_actions.md): Creates an action using the v2 action resource endpoint.
+- [Get action](https://developers.hive.com/reference/get_actions_actionid.md): Retrieves one action by ID.
+- [Update action](https://developers.hive.com/reference/put_actions_actionid.md): Updates one action by ID using the same server-side validation as the legacy API handler.
+- [Delete action](https://developers.hive.com/reference/delete_actions_actionid.md): Deletes one action by ID, preserving Hive soft-delete semantics.
+- [List subactions](https://developers.hive.com/reference/get_actions_actionid_subactions.md): Returns cursor-paginated subactions for an action.
+- [List action comments](https://developers.hive.com/reference/get_actions_actionid_comments.md): Returns cursor-paginated comments for an action.
+- [Create action comment](https://developers.hive.com/reference/post_actions_actionid_comments.md): Creates a comment on an action. Body requires body.
+- [List action attachments](https://developers.hive.com/reference/get_actions_actionid_attachments.md): Returns cursor-paginated file and Hive Drive attachments for an action.
+- [Add action attachment](https://developers.hive.com/reference/post_actions_actionid_attachments.md): Adds an attachment from a URL. Body requires url and may include filename.
+- [Get action attachment](https://developers.hive.com/reference/get_actions_actionid_attachments_attachmentid.md): Retrieves one action attachment by ID.
+- [List action history](https://developers.hive.com/reference/get_actions_actionid_action_history.md): Returns cursor-paginated history items for an action.
+- [Apply workflow template to action](https://developers.hive.com/reference/post_actions_actionid_apply_template.md): Applies a workflow/template to an existing action. Body requires processId.
+- [Agile Sprints](https://developers.hive.com/reference/agile-sprints.md): APIs related to Agile Sprints in Hive.
+- [Get agile sprint](https://developers.hive.com/reference/get_agile_sprints_sprintid.md): Retrieves one agile sprint by ID.
+- [List agile sprints](https://developers.hive.com/reference/get_workspaces_workspaceid_agile_sprints.md): Returns cursor-paginated agile sprints for a workspace.
+- [Dashboards](https://developers.hive.com/reference/dashboards.md)
+- [Get dashboard widget data](https://developers.hive.com/reference/get_dashboard_widgets_widgetid_data.md): Returns processed dashboard widget data. Provide user_filter_id, or provide workspace_id so the server can locate the dashboard user filter.
+- [Export dashboard widget data](https://developers.hive.com/reference/get_dashboard_widgets_widgetid_export.md): Returns a temporary download URL for a CSV export of dashboard widget data. Large exports may take several minutes.
+- [List workspace projects](https://developers.hive.com/reference/get_workspaces_workspaceid_projects.md): Returns cursor-paginated projects accessible to the authenticated user. V2 includes archived projects by default; use filters[archived] to narrow. V1 excluded archived projects by default and accepted filters[deleted], which V2 does not.
+- [List projects](https://developers.hive.com/reference/get_projects.md): Returns projects accessible to the authenticated user using legacy-compatible resource handler.
+- [Create project](https://developers.hive.com/reference/post_projects.md): Creates a project.
+- [Copy project](https://developers.hive.com/reference/post_projects_copy.md): Copies an existing project. Body requires projectId and name.
+- [Get project](https://developers.hive.com/reference/get_projects_projectid.md): Retrieves one project by ID.
+- [Update project](https://developers.hive.com/reference/put_projects_projectid.md): Updates mutable project fields such as name, dates, color, sharing, budget, archive state, and owners.
+- [Delete project](https://developers.hive.com/reference/delete_projects_projectid.md): Deletes one project by ID.
+- [Add project custom field](https://developers.hive.com/reference/post_projects_projectid_project_custom_field.md): Adds or reuses a project custom field and attaches it to the project.
+- [Update project custom field](https://developers.hive.com/reference/put_projects_projectid_project_custom_field_fieldid.md): Updates a project custom field value or label.
+- [Delete project custom field](https://developers.hive.com/reference/delete_projects_projectid_project_custom_field_fieldid.md): Disables a custom field on a project.
+- [List project users](https://developers.hive.com/reference/get_projects_projectid_users.md): Returns users visible on a project.
+- [List workspaces](https://developers.hive.com/reference/get_workspaces.md): Returns cursor-paginated workspaces accessible to the authenticated user.
+- [List groups](https://developers.hive.com/reference/get_workspaces_workspaceid_groups.md): Returns cursor-paginated groups for a workspace.
+- [List custom fields](https://developers.hive.com/reference/get_workspaces_workspaceid_custom_fields.md): Returns cursor-paginated workspace custom fields. Supports label filter and sortBy.
+- [Create custom field](https://developers.hive.com/reference/post_workspaces_workspaceid_custom_fields.md): Creates a workspace custom field.
+- [Get custom field](https://developers.hive.com/reference/get_workspaces_workspaceid_custom_fields_customfieldid.md): Retrieves one workspace custom field. Note: if workspace lookup fails, current server behavior may return no response; prefer valid workspace-scoped IDs.
+- [List labels](https://developers.hive.com/reference/get_workspaces_workspaceid_labels.md): Returns cursor-paginated labels. totalCount is always included by the current implementation.
+- [Create label](https://developers.hive.com/reference/post_workspaces_workspaceid_labels.md): Creates a workspace label.
+- [Get label](https://developers.hive.com/reference/get_workspaces_workspaceid_labels_labelid.md): Retrieves one label by ID.
+- [Update label](https://developers.hive.com/reference/put_workspaces_workspaceid_labels_labelid.md): Updates one label by ID.
+- [Delete label](https://developers.hive.com/reference/delete_workspaces_workspaceid_labels_labelid.md): Deletes one label by ID.
+- [List project statuses](https://developers.hive.com/reference/get_workspaces_workspaceid_project_statuses.md): Returns cursor-paginated project statuses sorted by createdAt. totalCount is always included by the current implementation; sortBy is not supported.
+- [Get project status](https://developers.hive.com/reference/get_project_statuses_projectstatusid.md): Retrieves one project status by ID.
+- [Create project status](https://developers.hive.com/reference/post_project_statuses.md): Creates a project status.
+- [List versioned files](https://developers.hive.com/reference/get_workspaces_workspaceid_versioned_files.md): Returns cursor-paginated proofing versioned files accessible to the authenticated user.
+- [List resource assignments](https://developers.hive.com/reference/get_workspaces_workspaceid_resource_assignments.md): Returns cursor-paginated resource assignments sorted by createdAt. totalCount is always included by the current implementation; sortBy is not supported.
+- [Create resource assignment](https://developers.hive.com/reference/post_resource_assignments.md): Creates a resource assignment.
+- [Get resource assignment](https://developers.hive.com/reference/get_resource_assignments_resourceassignmentid.md): Retrieves one resource assignment.
+- [Update resource assignment](https://developers.hive.com/reference/put_resource_assignments_resourceassignmentid.md): Updates one resource assignment.
+- [Delete resource assignment](https://developers.hive.com/reference/delete_resource_assignments_resourceassignmentid.md): Deletes one resource assignment.
+- [List custom tags](https://developers.hive.com/reference/get_workspaces_workspaceid_custom_tags.md): Lists workspace custom tags. Optional type query filters by tag type.
+- [Create custom tag](https://developers.hive.com/reference/post_workspaces_workspaceid_custom_tags.md): Creates a custom tag and optional options.
+- [Get custom tag](https://developers.hive.com/reference/get_workspaces_workspaceid_custom_tags_customtagid.md): Retrieves one custom tag.
+- [Update custom tag](https://developers.hive.com/reference/put_workspaces_workspaceid_custom_tags_customtagid.md): Updates a custom tag name, multi-select setting, or options.
+- [Delete custom tag](https://developers.hive.com/reference/delete_workspaces_workspaceid_custom_tags_customtagid.md): Deletes one custom tag.
+- [List role tags](https://developers.hive.com/reference/get_workspaces_workspaceid_role_tags.md): Lists workspace role tags.
+- [Create role tag](https://developers.hive.com/reference/post_workspaces_workspaceid_role_tags.md): Creates a role tag.
+- [Update role tag](https://developers.hive.com/reference/put_workspaces_workspaceid_role_tags_roletagid.md): Updates a role tag.
+- [Delete role tag](https://developers.hive.com/reference/delete_workspaces_workspaceid_role_tags_roletagid.md): Deletes a role tag.
+- [List user tags](https://developers.hive.com/reference/get_workspaces_workspaceid_users_userid_user_tags.md): Returns user tag assignments. External workspace members are allowed by this API route when authenticated.
+- [Get user tag assignment](https://developers.hive.com/reference/get_workspaces_workspaceid_users_userid_user_tags_usertagid.md): Retrieves one custom tag assignment for a user.
+- [Update user tag assignment](https://developers.hive.com/reference/put_workspaces_workspaceid_users_userid_user_tags_usertagid.md): Updates selected options for a user custom tag.
+- [Get user role tag](https://developers.hive.com/reference/get_workspaces_workspaceid_users_userid_role_tags.md): Gets the role tag assigned to a user.
+- [Update user role tag](https://developers.hive.com/reference/put_workspaces_workspaceid_users_userid_role_tags_roletagid.md): Assigns or changes a user role tag.
+- [List project tags](https://developers.hive.com/reference/get_workspaces_workspaceid_projects_projectid_project_tags.md): Lists custom tag assignments for a project.
+- [Get project tag assignment](https://developers.hive.com/reference/get_workspaces_workspaceid_projects_projectid_project_tags_projecttagid.md): Retrieves one custom tag assignment for a project.
+- [Update project tag assignment](https://developers.hive.com/reference/put_workspaces_workspaceid_projects_projectid_project_tags_projecttagid.md): Updates selected options for a project custom tag.
+- [Create webhook](https://developers.hive.com/reference/post_webhooks.md): Creates a webhook endpoint.
+- [Delete webhook](https://developers.hive.com/reference/delete_webhooks_webhookid.md): Deletes a webhook owned by the authenticated user.
+- [List workflows](https://developers.hive.com/reference/get_workspaces_workspaceid_workflows.md): Returns cursor-paginated workflows for a workspace.
+- [Trigger workflow](https://developers.hive.com/reference/post_workflows_trigger.md): Triggers a workflow by ID and creates/runs its action from the workflow template.
+- [Create activity feed](https://developers.hive.com/reference/post_workspaces_workspaceid_activity_feeds.md): Creates an activity feed item in a workspace. Body must include a valid type, bucket, and attachedItemType.
+- [List users](https://developers.hive.com/reference/listusers.md): Retrieve a paginated list of users in the workspace. Supports filtering by `userName` (email address).  Pagination uses 1-based indexing as defined by the SCIM specification.
+- [Create user](https://developers.hive.com/reference/createuser.md): Provision a new user into the workspace. The user will be added as a workspace member.  If an `externalId` is provided and matches an existing user, the existing user will be updated instead of creating a duplicate. This allows IdPs to re-provision users who changed their email address.  If the user's email already belongs to an active workspace member, a `409 Conflict` is returned.
+- [Get user](https://developers.hive.com/reference/getuser.md): Retrieve a single user by their Hive user ID. The user must be a current or former member of the workspace.
+- [Replace user](https://developers.hive.com/reference/replaceuser.md): Full replacement of a user's attributes. This operation can update the user's name, email, active status, and external ID.  Setting `active` to `false` removes the user from the workspace. Setting `active` to `true` restores a previously removed user's membership.  Name and email updates are applied only when the user is an active workspace member.
+- [Update user](https://developers.hive.com/reference/patchuser.md): Partially update a user's attributes using SCIM PATCH operations.  Supported operations: - `replace` on `active` (boolean) to activate or deactivate the user. - `replace` on `externalId` (string) to update the external identifier. - `replace` on `password` is accepted but results in a no-op (Hive does not store IdP passwords).
+- [Delete user](https://developers.hive.com/reference/deleteuser.md): Remove a user from the workspace. This does not permanently delete the user's Hive account. The user is moved to the workspace's removed users list and can be re-provisioned later by creating them again or setting `active` to `true` via PUT.
+- [List groups](https://developers.hive.com/reference/listgroups.md): Retrieve a paginated list of groups (teams) in the workspace. Supports filtering by `displayName` (team name).  Pagination uses 1-based indexing as defined by the SCIM specification.
+- [Create group](https://developers.hive.com/reference/creategroup.md): Create a new group (team) in the workspace with an optional initial list of members.  If a group with the same `displayName` already exists in the workspace, the existing group will be updated with the provided members instead of creating a duplicate. This behavior is required for compatibility with Okta.  All members referenced in the request must be active members of the workspace.
+- [Get group](https://developers.hive.com/reference/getgroup.md): Retrieve a single group (team) by its Hive team ID.
+- [Replace group](https://developers.hive.com/reference/replacegroup.md): Full replacement of a group's attributes, including its name and member list.  All members referenced in the request must be active members of the workspace.
+- [Update group](https://developers.hive.com/reference/patchgroup.md): Partially update a group using SCIM PATCH operations.  Supported operations: - `add` on `members` to add new members to the group. - `remove` on `members` to remove specific members using a filter expression. - `replace` on `members` to replace the entire member list. - `replace` on `displayName` to rename the group.
+- [Delete group](https://developers.hive.com/reference/deletegroup.md): Delete a group (team) from the workspace. This is a soft delete.

@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hive Public Actions Dashboard Widgets API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dashboard Widgets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get widget data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/dashboard_widgets/:widgetId/data",
+            "params": [
+              {
+                "name": "widgetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get widget data"
+        },
+        {
+          "info": {
+            "name": "Export widget data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/dashboard_widgets/:widgetId/export",
+            "params": [
+              {
+                "name": "widgetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Export widget data"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

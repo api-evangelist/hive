@@ -1,0 +1,251 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hive Public Actions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an action (task)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.hive.com/api/v1/actions"
+          },
+          "docs": "Create an action (task)"
+        },
+        {
+          "info": {
+            "name": "Get an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/actions/:actionId",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an action"
+        },
+        {
+          "info": {
+            "name": "Update an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.hive.com/api/v1/actions/:actionId",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an action"
+        },
+        {
+          "info": {
+            "name": "Delete an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.hive.com/api/v1/actions/:actionId",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an action"
+        },
+        {
+          "info": {
+            "name": "List attachments for an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/attachments",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List attachments for an action"
+        },
+        {
+          "info": {
+            "name": "Add an attachment to an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/attachments",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add an attachment to an action"
+        },
+        {
+          "info": {
+            "name": "Get an action attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/attachments/:attachmentId",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "attachmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an action attachment"
+        },
+        {
+          "info": {
+            "name": "List comments on an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/comments",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List comments on an action"
+        },
+        {
+          "info": {
+            "name": "Add a comment to an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/comments",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add a comment to an action"
+        },
+        {
+          "info": {
+            "name": "Get the action history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/action_history",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the action history"
+        },
+        {
+          "info": {
+            "name": "List subactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/subactions",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List subactions"
+        },
+        {
+          "info": {
+            "name": "Apply a template to an action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.hive.com/api/v1/actions/:actionId/apply_template",
+            "params": [
+              {
+                "name": "actionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Apply a template to an action"
+        },
+        {
+          "info": {
+            "name": "Bulk update actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.hive.com/api/v1/actions/bulk-update"
+          },
+          "docs": "Bulk update actions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

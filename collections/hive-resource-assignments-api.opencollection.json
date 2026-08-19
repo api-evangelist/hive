@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hive Public Actions Resource Assignments API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Resource Assignments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List resource assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/resource_assignments"
+          },
+          "docs": "List resource assignments"
+        },
+        {
+          "info": {
+            "name": "Create a resource assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.hive.com/api/v1/resource_assignments"
+          },
+          "docs": "Create a resource assignment"
+        },
+        {
+          "info": {
+            "name": "Get a resource assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/resource_assignments/:resourceAssignmentId",
+            "params": [
+              {
+                "name": "resourceAssignmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a resource assignment"
+        },
+        {
+          "info": {
+            "name": "Update a resource assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.hive.com/api/v1/resource_assignments/:resourceAssignmentId",
+            "params": [
+              {
+                "name": "resourceAssignmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a resource assignment"
+        },
+        {
+          "info": {
+            "name": "Delete a resource assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.hive.com/api/v1/resource_assignments/:resourceAssignmentId",
+            "params": [
+              {
+                "name": "resourceAssignmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a resource assignment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

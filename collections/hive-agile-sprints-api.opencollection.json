@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hive Public Actions Agile Sprints API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Agile Sprints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a sprint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.hive.com/api/v1/agile_sprints/:sprintId",
+            "params": [
+              {
+                "name": "sprintId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a sprint"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
