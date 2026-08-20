@@ -27,6 +27,13 @@ tags:
   - Task Management
   - Team Collaboration
   - Productivity
+  - Workflow-Automation
+  - Time Tracking
+tags_raw:
+  - Project Management
+  - Task Management
+  - Team Collaboration
+  - Productivity
   - Workflow Automation
   - Time Tracking
 url: https://raw.githubusercontent.com/api-evangelist/hive/refs/heads/main/apis.yml
@@ -42,6 +49,12 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
+  - Workspaces
+  - Project
+  - Actions
+  - Task
+  - User
+  tags_raw:
   - Workspaces
   - Projects
   - Actions
@@ -98,6 +111,8 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -108,6 +123,8 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -128,6 +145,8 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -138,6 +157,8 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -148,6 +169,8 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
