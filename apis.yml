@@ -62,7 +62,7 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
-  - Workspaces
+  - Workspace
   - Project
   - Actions
   - Task
@@ -204,6 +204,8 @@ apis:
   humanURL: https://developers.hive.com/reference/introduction
   baseURL: https://app.hive.com/api/v1
   tags:
+  - Workspace
+  tags_raw:
   - Workspaces
   properties:
   - type: OpenAPI
