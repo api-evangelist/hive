@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Hive Public Actions Messages API
+  title: Hive Public Messages API
   description: 'REST API for the Hive (hive.com) work-management platform. Provides
 
     CRUD access to workspaces, projects, actions (tasks), users, teams,
@@ -9,9 +9,7 @@ info:
 
     webhooks, and workflows. Endpoint list derived from
 
-    https://developers.hive.com/llms.txt.
-
-    '
+    https://developers.hive.com/llms.txt.'
   version: '1.0'
   contact:
     name: Hive Developers
