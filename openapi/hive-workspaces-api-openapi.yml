@@ -307,14 +307,14 @@ paths:
       - Workspaces
 components:
   parameters:
-    UserId:
-      name: userId
+    WorkspaceId:
+      name: workspaceId
       in: path
       required: true
       schema:
         type: string
-    WorkspaceId:
-      name: workspaceId
+    UserId:
+      name: userId
       in: path
       required: true
       schema:
