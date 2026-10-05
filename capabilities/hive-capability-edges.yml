@@ -1,0 +1,45 @@
+slug: hive
+provider: Hive
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Projects
+  spec_file: hive-projects-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.88
+  evidence: GET /projects  listProjects  List projects; POST /projects  createProject  Create a project
+  reason: Full CRUD over projects (plus copy, project users, project custom fields) in a work-management
+    platform is straightforward project execution management.
+- tag: Actions
+  spec_file: hive-actions-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.8
+  evidence: POST /actions  createAction  Create an action (task); GET /actions/{actionId}/subactions  listSubactions;
+    'projects, actions (tasks), users, teams, comments'
+  reason: Actions are tasks in a work-management platform, with subtasks, comments, attachments and history
+    — task execution and tracking, i.e. Project Management. Some chance the intended level is PMO/portfolio,
+    hence 0.8.
+- tag: Workspaces
+  spec_file: hive-workspaces-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.7
+  evidence: GET /workspaces/{workspaceId}/actions  listWorkspaceActions  List actions in a workspace;
+    GET /workspaces/{workspaceId}/agile_sprints  listSprints
+  reason: Workspace endpoints expose tasks (actions), projects and sprints — the core project execution
+    surface; some operations are mere container/configuration listing.
