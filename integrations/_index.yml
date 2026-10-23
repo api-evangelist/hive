@@ -15,6 +15,32 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: hive-pipedream
+  label: Pipedream
+  partner: pipedream
+  partner_name: Pipedream
+  type: marketplace
+  marketplace: pipedream-components
+  channel: open-source-node
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/hive
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Pipedream components (PipedreamHQ/pipedream components/)
+    spec_file: null
+    role: ipaas-connector:pipedream
+    registered_name: hive
+    matched_domain: hive.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: hive
+    actions: true
+    sources: true
+    builder: Pipedream repo (component)
+  status: not-a-workflow
+  arazzo: null
 - slug: hive-okta-own
   label: Okta (own)
   partner: okta
@@ -80,29 +106,29 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: hive-pipedream
-  label: Pipedream
-  partner: pipedream
-  partner_name: Pipedream
+- slug: hive-adobe-creative-cloud-own
+  label: Adobe Creative Cloud (own)
+  partner: adobe-creative-cloud
+  partner_name: Adobe Creative Cloud (own)
+  category: Adobe Exchange Creative Cloud listing (InDesign)
   type: marketplace
-  marketplace: pipedream-components
-  channel: open-source-node
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/hive
+  marketplace: own
+  channel: partner-built
+  evidence: https://exchange.adobe.com/apps/cc/c990a49c/hive-for-indesign
   source: edge
-  relationship: ipaas-bridge
-  contract_reference:
-    register: Pipedream components (PipedreamHQ/pipedream components/)
-    spec_file: null
-    role: ipaas-connector:pipedream
-    registered_name: hive
-    matched_domain: hive.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: hive
-    actions: true
-    sources: true
-    builder: Pipedream repo (component)
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: hive-adobe-photoshop-own
+  label: Adobe Photoshop (own)
+  partner: adobe-photoshop
+  partner_name: Adobe Photoshop (own)
+  category: Adobe Exchange Creative Cloud listing (Photoshop)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://exchange.adobe.com/apps/cc/bfbb5d45/hive-for-photoshop
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null

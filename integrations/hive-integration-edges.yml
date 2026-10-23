@@ -9,6 +9,8 @@ checked:
 - slack/integrations/slack-integration-edges.yml
 - stripe/integrations/stripe-integration-edges.yml
 - zoom/integrations/zoom-integration-edges.yml
+- adobe-creative-cloud/integrations/adobe-creative-cloud-integration-edges.yml
+- adobe-photoshop/integrations/adobe-photoshop-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Atlassian Marketplace
@@ -26,6 +28,32 @@ edges:
   publisher_name: Hiveteams
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: Pipedream
+  partner: pipedream
+  partner_match: aggregator
+  type: marketplace
+  marketplace: pipedream-components
+  channel: open-source-node
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/hive
+  category: null
+  contract_reference:
+    register: Pipedream components (PipedreamHQ/pipedream components/)
+    spec_file: null
+    role: ipaas-connector:pipedream
+    registered_name: hive
+    matched_domain: hive.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: hive
+    actions: true
+    sources: true
+    builder: Pipedream repo (component)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 - partner_name: Okta (own)
   partner: okta
   partner_match: mirror
@@ -123,31 +151,39 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Zoom app
-- partner_name: Pipedream
-  partner: pipedream
-  partner_match: aggregator
+- partner_name: Adobe Creative Cloud (own)
+  partner: adobe-creative-cloud
+  partner_match: mirror
+  mirror_match: domain
   type: marketplace
-  marketplace: pipedream-components
-  channel: open-source-node
-  relationship: ipaas-bridge
+  relationship: platform-app
   direction: third-party
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/hive
-  category: null
-  contract_reference:
-    register: Pipedream components (PipedreamHQ/pipedream components/)
-    spec_file: null
-    role: ipaas-connector:pipedream
-    registered_name: hive
-    matched_domain: hive.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: hive
-    actions: true
-    sources: true
-    builder: Pipedream repo (component)
-  detected_by: sweep-workflow-automation.py
-  first_seen: '2026-10-15'
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/c990a49c/hive-for-indesign
+  mirror_of: adobe-creative-cloud/integrations/adobe-creative-cloud-integration-edges.yml
+  apps:
+  - Hive for InDesign
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (InDesign)
+- partner_name: Adobe Photoshop (own)
+  partner: adobe-photoshop
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/bfbb5d45/hive-for-photoshop
+  mirror_of: adobe-photoshop/integrations/adobe-photoshop-integration-edges.yml
+  apps:
+  - Hive for Photoshop
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (Photoshop)
 source:
 - https://marketplace.atlassian.com/
