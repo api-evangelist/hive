@@ -1,4 +1,4 @@
-# Hive (hive)
+# Hive
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,62 +66,123 @@
 
 Hive (hive.com) is a project management and team collaboration platform that centralizes projects, tasks, time tracking, messaging, and workflow automation across teams, with multiple project views including Kanban, Gantt, Timeline, and Calendar. The Hive Public API gives developers programmatic access to workspaces, projects, actions (tasks), users, comments, and other core resources, authenticated via API tokens scoped to a workspace.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/hive/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/hive/refs/heads/main/apis.yml)
+**Areas:** Project Management · Task Management · Team Collaboration · Productivity · Workflow Automation · Time Tracking
 
-## Scope
+## Hive on APIs.io
 
-- **Type:** Index
+Everything profiled for Hive is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hive/](https://apis.io/providers/hive/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (13)
 
-- Project Management
-- Task Management
-- Team Collaboration
-- Productivity
-- Workflow Automation
-- Time Tracking
+- [Hive Public API](https://apis.io/apis/hive/public-api/) — REST API for the Hive work management platform, providing CRUD access to workspaces, projects, actions (tasks), users, comments, labels, and attachments.…
+- [Hive Actions API](https://apis.io/apis/hive/hive-actions-api/) — The Actions API from Hive — 9 operation(s) for actions.
+- [Hive Agile Sprints API](https://apis.io/apis/hive/hive-agile-sprints-api/) — The Agile Sprints API from Hive — 1 operation(s) for agile sprints.
+- [Hive Dashboard Widgets API](https://apis.io/apis/hive/hive-dashboard-widgets-api/) — The Dashboard Widgets API from Hive — 2 operation(s) for dashboard widgets.
+- [Hive Form Submissions API](https://apis.io/apis/hive/hive-form-submissions-api/) — The Form Submissions API from Hive — 1 operation(s) for form submissions.
+- [Hive Messages API](https://apis.io/apis/hive/hive-messages-api/) — The Messages API from Hive — 1 operation(s) for messages.
+- [Hive Projects API](https://apis.io/apis/hive/hive-projects-api/) — The Projects API from Hive — 6 operation(s) for projects.
+- [Hive Resource Assignments API](https://apis.io/apis/hive/hive-resource-assignments-api/) — The Resource Assignments API from Hive — 2 operation(s) for resource assignments.
+- [Hive Teams API](https://apis.io/apis/hive/hive-teams-api/) — The Teams API from Hive — 3 operation(s) for teams.
+- [Hive Users API](https://apis.io/apis/hive/hive-users-api/) — The Users API from Hive — 2 operation(s) for users.
+- [Hive Webhooks API](https://apis.io/apis/hive/hive-webhooks-api/) — The Webhooks API from Hive — 2 operation(s) for webhooks.
+- [Hive Workflows API](https://apis.io/apis/hive/hive-workflows-api/) — The Workflows API from Hive — 1 operation(s) for workflows.
+- [Hive Workspaces API](https://apis.io/apis/hive/hive-workspaces-api/) — The Workspaces API from Hive — 15 operation(s) for workspaces.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Hive Public API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-REST API for the Hive work management platform, providing CRUD access to workspaces, projects, actions (tasks), users, comments, labels, and attachments. Authentication uses workspace-scoped API tokens.
+- [Hive Agentic Access](https://apis.io/agentic-access/hive/hive-agentic-access/)
 
-- **Human URL:** [https://developers.hive.com/reference/introduction](https://developers.hive.com/reference/introduction)
-- **Base URL:** `https://app.hive.com/api/v1`
+#### Collections (13)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Workspaces
-- Projects
-- Actions
-- Tasks
-- Users
+- [Hive Public API](https://apis.io/collections/hive/open-hive/)
+- [Hive Public Actions API](https://apis.io/collections/hive/open-hive-actions-api/)
+- [Hive Public Actions Agile Sprints API](https://apis.io/collections/hive/open-hive-agile-sprints-api/)
+- [Hive Public Actions Dashboard Widgets API](https://apis.io/collections/hive/open-hive-dashboard-widgets-api/)
+- [Hive Public Actions Form Submissions API](https://apis.io/collections/hive/open-hive-form-submissions-api/)
+- [Hive Public Actions Messages API](https://apis.io/collections/hive/open-hive-messages-api/)
+- [Hive Public Actions Projects API](https://apis.io/collections/hive/open-hive-projects-api/)
+- [Hive Public Actions Resource Assignments API](https://apis.io/collections/hive/open-hive-resource-assignments-api/)
+- [Hive Public Actions Teams API](https://apis.io/collections/hive/open-hive-teams-api/)
+- [Hive Public Actions Users API](https://apis.io/collections/hive/open-hive-users-api/)
+- [Hive Public Actions Webhooks API](https://apis.io/collections/hive/open-hive-webhooks-api/)
+- [Hive Public Actions Workflows API](https://apis.io/collections/hive/open-hive-workflows-api/)
+- [Hive Public Actions Workspaces API](https://apis.io/collections/hive/open-hive-workspaces-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://developers.hive.com/reference/introduction)
-- [API Reference](https://developers.hive.com/reference)
-- [Postman Collection](collections/hive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/hive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Hive Authentication](https://apis.io/security/hive/hive-authentication/)
+- [Hive Domain Security](https://apis.io/security/hive/hive-domain-security/)
 
-- [LinkedIn](https://www.linkedin.com/company/hiveai)
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://hive.com/)
 - [Documentation](https://developers.hive.com/)
-- [API Reference](https://developers.hive.com/reference/introduction)
-- [Sign Up](https://hive.com/get-started/)
+- [API reference](https://developers.hive.com/reference/introduction)
 - [Pricing](https://hive.com/pricing/)
 - [Support](https://support.hive.com/)
-- [L L Ms Txt](https://developers.hive.com/llms.txt)
+- [Blog](https://hive.com/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 48.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 25.0 |
+| Access clarity | 23.7 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hive/](https://apis.io/providers/hive/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hive: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hive/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
